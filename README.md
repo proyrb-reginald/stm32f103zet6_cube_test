@@ -4,7 +4,32 @@
 
 这是一个基于STM32F103ZET6芯片的开发板的测试项目，目的就是测试CubeMX+VSCode+HAL的开发环境是否正常且功能完备。
 
-## 二、环境搭建
+## 二、项目特点
+
+|中间件|版本|
+|:--:|:--:|
+|RT-Thread|V4.1.1|
+|FatFS|R0.16|
+|LVGL|V9.4|
+
+## 三、项目结构
+
+待补充。
+
+```
+stm32f103zet6_cube_test
+├── Drivers
+├── Inc
+├── Src
+├── STM32F1xx_HAL_Driver
+├── System
+├── build
+├── CMakeLists.txt
+├── .vscode
+└── launch.json
+```
+
+## 四、环境搭建
 
 1. 安装CubeMX+VSCode并进行必要配置。（[参考视频](https://www.bilibili.com/video/BV1QfbpzGENy/?spm_id_from=333.337.search-card.all.click&vd_source=d8cb6312afe69434564a70a01af62c85)）
     > 完成这一步后，理应可以正常编译通过，并且可以通过STLink与JLink进行烧录与调试。如果使用DAPLink，请参考后续两步。

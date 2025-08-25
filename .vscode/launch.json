@@ -14,7 +14,7 @@
                 "target/stm32f1x.cfg"
             ],
             "svdFile": "STM32F103.svd",
-            "runToEntryPoint": "main",
+            "runToEntryPoint": "rt_hw_board_init",
             "showDevDebugOutput": "none"
         }
     ]

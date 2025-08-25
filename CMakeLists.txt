@@ -42,14 +42,24 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
 )
 
+# Add middlewares sources
+file(GLOB_RECURSE MIDDLEWARES_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/*.s
+)
+
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ${MIDDLEWARES_SOURCES}
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/components/finsh/
+    ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/port/
 )
 
 # Add project symbols (macros)
