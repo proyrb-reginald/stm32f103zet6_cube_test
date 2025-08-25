@@ -18,8 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f1xx_hal.h"
-#include "stm32f1xx_hal_gpio.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -87,7 +85,7 @@ int main(void) {
 
     /* Initialize all configured peripherals */
     MX_GPIO_Init();
-    MX_UART5_Init();
+    MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
 
     /* USER CODE END 2 */
@@ -96,7 +94,8 @@ int main(void) {
     /* USER CODE BEGIN WHILE */
     while (1) {
         HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-        HAL_Delay(500);
+        HAL_UART_Transmit(&huart1, (uint8_t *)"led\n", 4, 100);
+        HAL_Delay(1000);
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
