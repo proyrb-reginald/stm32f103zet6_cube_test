@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "flash-daplink",
+            "type": "process",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/cmsis-dap.cfg",
+                "-f",
+                "target/stm32f1x.cfg",
+                "-c",
+                "program build/Debug/stm32f103zet6_cube_test.elf verify reset exit"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}
