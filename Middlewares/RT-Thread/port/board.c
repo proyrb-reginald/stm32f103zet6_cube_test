@@ -10,8 +10,10 @@
 
 #include <rtthread.h>
 #include "main.h"
+#include "dma.h"
 #include "iwdg.h"
 #include "rtc.h"
+#include "sdio.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -26,6 +28,8 @@ void rt_hw_board_init(void) {
     MX_RTC_Init();
     MX_USART1_UART_Init();
     MX_GPIO_Init();
+    // MX_SDIO_SD_Init(); //初始化卡在HAL_Delay
+    MX_DMA_Init();
     MX_IWDG_Init();
 
     /* Call components board initial (use INIT_BOARD_EXPORT()) */

@@ -18,8 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "iwdg.h"
 #include "rtc.h"
+#include "sdio.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -74,24 +76,26 @@ int main(void) {
     /* MCU Configuration--------------------------------------------------------*/
 
     /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-    //   HAL_Init();
+    // HAL_Init();
 
     /* USER CODE BEGIN Init */
 
     /* USER CODE END Init */
 
     /* Configure the system clock */
-    //   SystemClock_Config();
+    // SystemClock_Config();
 
     /* USER CODE BEGIN SysInit */
 
     /* USER CODE END SysInit */
 
     /* Initialize all configured peripherals */
-    //   MX_GPIO_Init();
-    //   MX_USART1_UART_Init();
-    //   MX_IWDG_Init();
-    //   MX_RTC_Init();
+    // MX_GPIO_Init();
+    // MX_DMA_Init();
+    // MX_USART1_UART_Init();
+    // MX_IWDG_Init();
+    // MX_RTC_Init();
+    // MX_SDIO_SD_Init();
     /* USER CODE BEGIN 2 */
 
     /* USER CODE END 2 */
