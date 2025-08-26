@@ -44,6 +44,10 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add middlewares sources
 file(GLOB_RECURSE MIDDLEWARES_SOURCES
+    # Add FatFS sources
+    # ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/FatFS/*.c
+
+    # Add RT-Thread sources
     ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/*.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/*.s
 )
@@ -56,7 +60,11 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    # Add user defined include paths
+    # Add FatFS include paths
+    # ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/FatFS/inc/
+    # ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/FatFS/port/
+
+    # Add RT-Thread include paths
     ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/components/finsh/
     ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/include/
     ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/RT-Thread/port/
